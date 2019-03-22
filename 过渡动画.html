@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>过渡动画</title>
+		<!--github-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.div1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				
+				/*transition-property: all;
+				transition-duration: 2s;
+				transition-timing-function: linear;
+				transition-delay: 2s;*/
+				
+				/*合写*/
+				transition: all 2s linear 1s;
+			}
+			.div1:hover{
+				background-color: greenyellow;
+				width: 400px;
+				height: 400px;
+			}
+			.il{
+				transition: all 1s linear;
+				background-color: greenyellow;
+				width: 173px;
+			}
+			.il:focus{
+				background-color: yellow;
+				width: 300px;
+			}
+			.a1{
+				transition: all 2s linear;
+				position: relative;
+				left: 0;
+			}
+			.a1:checked{
+				left: 300px;
+			}
+			/*body{
+				background-color: pink;
+				transition: all 2s;
+			}
+			@media only screen and (min-width:700px ) {
+				body{
+					background-color: greenyellow;
+				}
+			}*/
+			body{
+				background: url(../day03/向日葵.jpg);
+				transition: all 2s linear;
+			}
+			body:hover{
+				background: url(../day04/4.jpg);
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			CSS动画都是针对元素的CSS样式实现的动画效果
+			过渡动画: transition
+			1. 要进行动画的CSS样式 (transition-property)
+			2. 动画执行的时间 (transition-duration) 单位: s
+			3. 动画的运动速率 (transition-timing-function)
+			   a. ease            开始结束慢, 中间快
+			   b. ease-in         开始慢, 之后快
+			   c. ease-out        结束慢
+			   d. ease-in-out     开始和结束慢
+			   e. linear          匀速
+			   f. cubic-bezier(n,n,n,n)  通过4个参数, 可以模拟出以上所有的运动效果
+			4. 动画的延迟时间 (transition-delay) 单位秒: s
+			
+			
+			触发过渡动画的时机
+			1. :hover伪类 能找到鼠标在其上面的元素
+			2. :focus伪类  能找到聚焦的元素(一般用于表单控件)
+			3. :checked伪类
+			4. 媒介查询
+			5. JS
+			
+			并不是所有的CSS样式都可以做过渡动画.
+			要满足样式的变化过程是数值变化的过程.
+		-->
+		<div class="div1"></div>
+		<input type="text" class="il"/>
+		<input type="checkbox" class="a1"/>
+	</body>
+</html>
